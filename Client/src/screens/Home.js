@@ -11,7 +11,7 @@ export default function Home() {
     const [search, setSearch] = useState("");
 
     const fetchData = async () => {
-        let response = await axios.post("http://localhost:5000/api/foodData")
+        let response = await axios.post("https://food-delivery-application-api-lac.vercel.app/api/foodData")
         // console.log(response.data[0], response.data[1])
         setFoodItem(response.data[0])
         setFoodCat(response.data[1])
