@@ -15,7 +15,7 @@ export default function MyOrder() {
                 return;
             }
 
-            const response = await axios.post("http://localhost:5000/api/myOrderData", {
+            const response = await axios.post("https://food-delivery-application-api-lac.vercel.app/api/myOrderData", {
                 email: userEmail
             }, {
                 headers: {
