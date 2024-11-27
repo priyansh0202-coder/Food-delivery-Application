@@ -247,7 +247,7 @@ export default function Home() {
                 {
                     foodCat && foodCat.length > 0
                         ? foodCat.map((data, index) => (
-                            <div key={index} className='row mb-3'>
+                            <div key={data.CategoryName} className='row mb-3'>
                                 <div className='fs-3 m-3'>
                                     {data.CategoryName}
                                 </div>
