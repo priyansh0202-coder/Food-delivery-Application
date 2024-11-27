@@ -151,6 +151,8 @@ export default function Home() {
     const [foodItem, setFoodItem] = useState([]); // Ensure initialized as empty array
     const [search, setSearch] = useState("");
 
+    axios.defaults.withCredentials = true
+
     const fetchData = async () => {
     try {
         let response = await axios.post("https://food-delivery-application-api-lac.vercel.app/api/foodData");
