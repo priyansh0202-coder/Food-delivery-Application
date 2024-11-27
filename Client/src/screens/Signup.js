@@ -13,7 +13,7 @@ export default function Signup() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post(" http://localhost:5000/api/createuser", JSON.stringify(credentials), {
+            const response = await axios.post(" https://food-delivery-application-api-lac.vercel.app/api/createuser", JSON.stringify(credentials), {
                 headers: {
                     'Content-Type': 'application/json'
                 }
