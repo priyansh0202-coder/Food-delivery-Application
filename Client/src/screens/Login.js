@@ -12,7 +12,7 @@ export default function Login() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post(" http://localhost:5000/api/loginuser", JSON.stringify(credentials), {
+            const response = await axios.post(" https://food-delivery-application-api-lac.vercel.app/api/loginuser", JSON.stringify(credentials), {
                 headers: {
                     'Content-Type': 'application/json'
                 }
