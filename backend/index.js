@@ -8,22 +8,22 @@ const bodyParser = require('body-parser')
 
 mongoDB();
 
-// app.use((req, res, next) => {
-//     res.setHeader("Access-Control-Allow-Origin", "http://localhost:3000");
-//     res.header(
-//         "Access-Control-Allow-Headers",
-//         "Origin, X-Requested-With, Content-Type, Accept"
-//     )
-//     next()
-// })
+app.use((req, res, next) => {
+    res.setHeader("Access-Control-Allow-Origin", "https://food-delivery-application-frontend-ten.vercel.app");
+    res.header(
+        "Access-Control-Allow-Headers",
+        "Origin, X-Requested-With, Content-Type, Accept"
+    )
+    next()
+})
 
 app.use(bodyParser.json());
-const allowedOrigins = [
-    "http://localhost:3000", 
-    "https://food-delivery-application-frontend-ten.vercel.app"
-];
+// const allowedOrigins = [
+//     "http://localhost:3000", 
+//     "https://food-delivery-application-frontend-ten.vercel.app"
+// ];
 app.use(cors({
-             origin: allowedOrigins,
+             origin: ["https://food-delivery-application-frontend-ten.vercel.app"],
              methods: ["GET", "POST", "PUT", "DELETE],
              credentials: true
              }))
