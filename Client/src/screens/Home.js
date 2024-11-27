@@ -104,7 +104,7 @@ export default function Home() {
             </div>
             <div className='container'>
                 {
-                    foodCat.length > 0
+                   foodCat && foodCat.length > 0
                         ? foodCat.map((data, index) => {
                             return (
                                 <div className='row mb-3'>
