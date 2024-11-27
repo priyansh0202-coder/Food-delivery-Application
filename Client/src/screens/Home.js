@@ -152,19 +152,24 @@ export default function Home() {
     const [search, setSearch] = useState("");
 
     const fetchData = async () => {
-        try {
-            let response = await axios.post("https://food-delivery-application-api-lac.vercel.app/api/foodData");
-            // Ensure response.data is in the expected format
-            if (Array.isArray(response.data) && response.data.length >= 2) {
-                setFoodItem(response.data[0]); // Assuming response.data[0] is an array of food items
-                setFoodCat(response.data[1]);  // Assuming response.data[1] is an array of food categories
-            } else {
-                console.error("Invalid response format:", response.data);
-            }
-        } catch (error) {
-            console.error("Error fetching data:", error);
+    try {
+        let response = await axios.post("https://food-delivery-application-api-lac.vercel.app/api/foodData");
+        console.log("API response:", response);  // Add this line to inspect the full response
+        if (Array.isArray(response.data) && response.data.length >= 2) {
+            setFoodItem(response.data[0]);
+            setFoodCat(response.data[1]);
+        } else {
+            console.error("Invalid response format:", response.data);
+            setFoodItem([]);  // Clear the food items if the response is not valid
+            setFoodCat([]);  // Clear the food categories if the response is not valid
         }
-    };
+    } catch (error) {
+        console.error("Error fetching data:", error);
+        setFoodItem([]);  // Clear the food items in case of an error
+        setFoodCat([]);  // Clear the food categories in case of an error
+    }
+};
+
 
     useEffect(() => {
         fetchData();
