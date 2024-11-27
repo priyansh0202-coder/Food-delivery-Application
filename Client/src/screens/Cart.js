@@ -24,7 +24,7 @@ export default function Cart() {
                 return;
             }
 
-            let response = await axios.post("http://localhost:5000/api/orderData", {
+            let response = await axios.post("https://food-delivery-application-api-lac.vercel.app/api/orderData", {
                 order_data: data,
                 email: userEmail,
                 order_date: new Date().toDateString()
